@@ -7,7 +7,9 @@
     using System.Reflection;
     using System.Runtime.CompilerServices;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using FluentAssertions;
+
+    using Xunit;
 
     /// <summary>
     ///     http://blog.ploeh.dk/2009/04/03/CreatingNumbersWithAutoFixture/
@@ -36,7 +38,7 @@
 
             RunSortOnCollection(sortClassType, actualList);
 
-            CollectionAssert.AreEqual(expectedList, actualList);
+            actualList.Should().Equal(expectedList);
         }
 
         public static void GivenReversedList(Type sortClassType)
@@ -47,7 +49,7 @@
 
             RunSortOnCollection(sortClassType, actualList);
 
-            CollectionAssert.AreEqual(expectedList, actualList);
+            actualList.Should().Equal(expectedList);
         }
 
         public static void GivenSinglePopulationListExpectNoChange(Type sortClassType)
@@ -57,7 +59,7 @@
 
             RunSortOnCollection(sortClassType, actualList);
 
-            CollectionAssert.AreEqual(expectedList, actualList);
+            actualList.Should().Equal(expectedList);
         }
 
         public static void GivenSortedList(Type sortClassType)
@@ -67,7 +69,7 @@
 
             RunSortOnCollection(sortClassType, actualList);
 
-            CollectionAssert.AreEqual(expectedList, actualList);
+            actualList.Should().Equal(expectedList);
         }
 
         public static void GivenUnSortedList(Type sortClassType)
@@ -78,7 +80,7 @@
 
             RunSortOnCollection(sortClassType, actualList);
 
-            CollectionAssert.AreEqual(expectedList, actualList);
+            actualList.Should().Equal(expectedList);
         }
 
         public static void GivenUnSortedListWithDuplicates(Type sortClassType)
@@ -89,7 +91,7 @@
 
             RunSortOnCollection(sortClassType, actualList);
 
-            CollectionAssert.AreEqual(expectedList, actualList);
+            actualList.Should().Equal(expectedList);
         }
 
         /// <summary>
@@ -104,7 +106,7 @@
                     .FirstOrDefault(
                         m => m.IsDefined(typeof(ExtensionAttribute), false) && m.GetParameters().Length == 1);
 
-            Assert.IsNotNull(methodInfo);
+            Assert.NotNull(methodInfo);
 
             MethodInfo genericMethod = methodInfo.MakeGenericMethod(collection.GetEnumeratedType());
 

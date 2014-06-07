@@ -3,9 +3,8 @@
     using System;
     using System.Diagnostics.CodeAnalysis;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using Xunit;
 
-    [TestClass]
     [ExcludeFromCodeCoverage]
     public class InPlaceQuickSorterTests
     {
@@ -17,37 +16,37 @@
 
         #region Public Methods and Operators
 
-        [TestMethod]
+        [Fact]
         public void GivenEndPointsReversedList()
         {
             Common.GivenEndPointsReversedList(SorterType);
         }
 
-        [TestMethod]
+        [Fact]
         public void GivenReversedList()
         {
             Common.GivenReversedList(SorterType);
         }
 
-        [TestMethod]
+        [Fact]
         public void GivenSinglePopulationListExpectNoChange()
         {
             Common.GivenSinglePopulationListExpectNoChange(SorterType);
         }
 
-        [TestMethod]
+        [Fact]
         public void GivenSortedList()
         {
             Common.GivenSortedList(SorterType);
         }
 
-        [TestMethod]
+        [Fact]
         public void GivenUnSortedList()
         {
             Common.GivenUnSortedList(SorterType);
         }
 
-        [TestMethod]
+        [Fact]
         public void GivenUnSortedListWithDuplicates()
         {
             Common.GivenUnSortedListWithDuplicates(SorterType);

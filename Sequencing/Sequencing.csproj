@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0B9EF2DD-C28A-47C4-BEDB-2C989EDD6DB1}</ProjectGuid>
+    <ProjectGuid>{5B97DA35-CA09-4B3D-8980-AA0F74A070A8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DataStructures</RootNamespace>
-    <AssemblyName>DataStructures</AssemblyName>
+    <RootNamespace>Sequencing</RootNamespace>
+    <AssemblyName>Sequencing</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -38,13 +38,16 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
-  <PropertyGroup>
-    <IncludePattern>**\*.cs</IncludePattern>
-    <ExcludePattern>obj</ExcludePattern>
-  </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ISequenceFinder.cs" />
+    <Compile Include="ITicTacToe.cs" />
+    <Compile Include="ITicTacToeBoard.cs" />
+    <Compile Include="LongestConsecutiveAscendingSubsequenceFinder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Trees\TrinaryTree.cs" />
+    <Compile Include="TicTacToe.cs" />
+    <Compile Include="TicTacToe2.cs" />
+    <Compile Include="TicTacToeBoard.cs" />
+    <Compile Include="TicTacToePlayers.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

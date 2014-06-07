@@ -1,4 +1,4 @@
-﻿namespace KnapsackProblem
+﻿namespace SubsetSumProblem.Algorithms
 {
     using System.Collections.Generic;
 

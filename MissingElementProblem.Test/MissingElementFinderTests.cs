@@ -2,15 +2,16 @@
 {
     using System.Diagnostics.CodeAnalysis;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using FluentAssertions;
 
-    [TestClass]
+    using Xunit;
+
     [ExcludeFromCodeCoverage]
     public class MissingElementFinderTests
     {
         #region Public Methods and Operators
 
-        [TestMethod]
+        [Fact]
         public void FirstArrayWithMissingValue()
         {
             const int ExpectedResult = 5;
@@ -20,7 +21,7 @@
             AssertResults(array1, array2, ExpectedResult);
         }
 
-        [TestMethod]
+        [Fact]
         public void GivenConsectiveNumbers()
         {
             const int ExpectedResult = 2;
@@ -30,7 +31,7 @@
             AssertResults(array1, array2, ExpectedResult);
         }
 
-        [TestMethod]
+        [Fact]
         public void GivenConsectiveNumbersMissingNumberZero()
         {
             var array1 = new int?[] { 0, 1, 2, 3 };
@@ -40,7 +41,7 @@
             AssertResults(array1, array2, ExpectedResult);
         }
 
-        [TestMethod]
+        [Fact]
         public void GivenConsectiveNumbersWithZero()
         {
             var array1 = new int?[] { 0, 1, 2, 3 };
@@ -50,7 +51,7 @@
             AssertResults(array1, array2, ExpectedResult);
         }
 
-        [TestMethod]
+        [Fact]
         public void GivenConsectiveNumbersWithZeroOutOfOrder()
         {
             var array1 = new int?[] { 3, 1, 2, 0 };
@@ -60,7 +61,7 @@
             AssertResults(array1, array2, ExpectedResult);
         }
 
-        [TestMethod]
+        [Fact]
         public void IntMax()
         {
             var array1 = new int?[] { 1, int.MaxValue, 60, 32 };
@@ -70,7 +71,7 @@
             AssertResults(array1, array2, ExpectedResult);
         }
 
-        [TestMethod]
+        [Fact]
         public void IntMin()
         {
             var array1 = new int?[] { 1, int.MinValue, 60, 32 };
@@ -80,7 +81,7 @@
             AssertResults(array1, array2, ExpectedResult);
         }
 
-        [TestMethod]
+        [Fact]
         public void NegativeNumbers()
         {
             var array1 = new int?[] { -10, 20, 60, 32 };
@@ -90,7 +91,7 @@
             AssertResults(array1, array2, ExpectedResult);
         }
 
-        [TestMethod]
+        [Fact]
         public void NonConsectiveNumbersOutOfOrder()
         {
             var array1 = new int?[] { 10, 20, 60, 32 };
@@ -108,7 +109,7 @@
         {
             var actualResult = MissingElementFinder.GetMissingElement(array1, array2);
 
-            Assert.AreEqual(expectedResult, actualResult);
+            expectedResult.Should().Be(actualResult);
         }
 
         #endregion

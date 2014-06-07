@@ -2,11 +2,12 @@
 {
     using System.Collections.Generic;
 
+    using FluentAssertions;
+
     using KnapsackProblem;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using Xunit;
 
-    [TestClass]
     public class GreedyApproximationTests
     {
         private readonly KnapsackSolver knapsackSolver = new KnapsackSolver();
@@ -14,7 +15,7 @@
         /// <summary>
         /// http://en.wikipedia.org/wiki/Knapsack_problem
         /// </summary>
-        [TestMethod]
+        [Fact]
         public void GreedyApproximationUsingWikipediaAnswer()
         {
             // arrange
@@ -46,8 +47,8 @@
                 MaxWeight);
 
             // assert
-            Assert.AreEqual(ExpectedContentValue, knapsack.ContentValue);
-            Assert.AreEqual(ExpectedWeight, knapsack.CurrentWeight);
+            knapsack.ContentValue.Should().Be(ExpectedContentValue);
+            knapsack.CurrentWeight.Should().Be(ExpectedWeight);
         }
     }
 }

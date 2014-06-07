@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30324.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnapsackProblem", "KnapsackProblem\KnapsackProblem.csproj", "{079937C2-23DD-4A2B-AADA-A78A81F6B923}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnapsackProblem.Test", "KnapsackProblem.Test\KnapsackProblem.Test.csproj", "{F953E934-07AB-4D18-8AAA-CA2CDF57DC78}"
@@ -20,6 +22,14 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructures", "DataStructures\DataStructures.csproj", "{0B9EF2DD-C28A-47C4-BEDB-2C989EDD6DB1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructures.Test", "DataStructures.Test\DataStructures.Test.csproj", "{F844F257-E81B-45D9-B0F9-5D1A449CEC96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sequencing.Test", "Sequencing.Test\Sequencing.Test.csproj", "{02AC773F-F80D-41E2-A5F1-EAAB05BE8FB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sequencing", "Sequencing\Sequencing.csproj", "{5B97DA35-CA09-4B3D-8980-AA0F74A070A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conversions", "Conversions\Conversions.csproj", "{F997EB3F-764F-4EBD-A393-DFA8BF6F03DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conversions.Test", "Conversions.Test\Conversions.Test.csproj", "{1C2A45CA-BAE2-46F0-B948-211F30728C9D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,6 +77,22 @@ Global
 		{F844F257-E81B-45D9-B0F9-5D1A449CEC96}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F844F257-E81B-45D9-B0F9-5D1A449CEC96}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F844F257-E81B-45D9-B0F9-5D1A449CEC96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02AC773F-F80D-41E2-A5F1-EAAB05BE8FB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02AC773F-F80D-41E2-A5F1-EAAB05BE8FB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02AC773F-F80D-41E2-A5F1-EAAB05BE8FB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02AC773F-F80D-41E2-A5F1-EAAB05BE8FB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B97DA35-CA09-4B3D-8980-AA0F74A070A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B97DA35-CA09-4B3D-8980-AA0F74A070A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B97DA35-CA09-4B3D-8980-AA0F74A070A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B97DA35-CA09-4B3D-8980-AA0F74A070A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F997EB3F-764F-4EBD-A393-DFA8BF6F03DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F997EB3F-764F-4EBD-A393-DFA8BF6F03DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F997EB3F-764F-4EBD-A393-DFA8BF6F03DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F997EB3F-764F-4EBD-A393-DFA8BF6F03DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C2A45CA-BAE2-46F0-B948-211F30728C9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C2A45CA-BAE2-46F0-B948-211F30728C9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C2A45CA-BAE2-46F0-B948-211F30728C9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C2A45CA-BAE2-46F0-B948-211F30728C9D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

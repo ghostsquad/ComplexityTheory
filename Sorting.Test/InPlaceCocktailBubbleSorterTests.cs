@@ -2,9 +2,9 @@
 {
     using System;
     using System.Diagnostics.CodeAnalysis;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-    [TestClass]
+    using Xunit;
+
     [ExcludeFromCodeCoverage]
     public class InPlaceCocktailBubbleSorterTests
     {
@@ -16,37 +16,37 @@
 
         #region Public Methods and Operators
 
-        [TestMethod]
+        [Fact]
         public void GivenEndPointsReversedList()
         {
             Common.GivenEndPointsReversedList(SorterType);
         }
 
-        [TestMethod]
+        [Fact]
         public void GivenReversedList()
         {
             Common.GivenReversedList(SorterType);
         }
 
-        [TestMethod]
+        [Fact]
         public void GivenSinglePopulationListExpectNoChange()
         {
             Common.GivenSinglePopulationListExpectNoChange(SorterType);
         }
 
-        [TestMethod]
+        [Fact]
         public void GivenSortedList()
         {
             Common.GivenSortedList(SorterType);
         }
 
-        [TestMethod]
+        [Fact]
         public void GivenUnSortedList()
         {
             Common.GivenUnSortedList(SorterType);
         }
 
-        [TestMethod]
+        [Fact]
         public void GivenUnSortedListWithDuplicates()
         {
             Common.GivenUnSortedListWithDuplicates(SorterType);
