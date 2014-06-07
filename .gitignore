@@ -4,6 +4,7 @@
 # User-specific files
 *.suo
 *.user
+*.sln.DotSettings.user
 *.sln.docstates
 
 # Build results
@@ -172,3 +173,6 @@ UpgradeLog*.htm
 
 # Microsoft Fakes
 FakesAssemblies/
+
+*.bak
+stylecop.cache
