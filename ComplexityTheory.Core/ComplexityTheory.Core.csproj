@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E21830A7-FC08-46A0-B50C-A10A9847C9EF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ComplexityTheory.Core</RootNamespace>
+    <AssemblyName>ComplexityTheory.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Algorithms\Combinatorics\KnapsackProblem\Algorithms\GreedyApproximation.cs" />
+    <Compile Include="Algorithms\Combinatorics\KnapsackProblem\Bounds.cs" />
+    <Compile Include="Algorithms\Combinatorics\KnapsackProblem\IKnapsackAlgorithm.cs" />
+    <Compile Include="Algorithms\Combinatorics\KnapsackProblem\Knapsack.cs" />
+    <Compile Include="Algorithms\Combinatorics\KnapsackProblem\KnapsackAlgorithmAttribute.cs" />
+    <Compile Include="Algorithms\Combinatorics\KnapsackProblem\KnapsackAlgorithmBase.cs" />
+    <Compile Include="Algorithms\Combinatorics\KnapsackProblem\KnapsackAlgorithmType.cs" />
+    <Compile Include="Algorithms\Combinatorics\KnapsackProblem\KnapsackSolver.cs" />
+    <Compile Include="Algorithms\Combinatorics\KnapsackProblem\SubSetSumComplete.cs" />
+    <Compile Include="Algorithms\Combinatorics\KnapsackProblem\Supply.cs" />
+    <Compile Include="Algorithms\Sequencing\ISequenceFinder.cs" />
+    <Compile Include="Algorithms\Sequencing\ITicTacToe.cs" />
+    <Compile Include="Algorithms\Sequencing\ITicTacToeBoard.cs" />
+    <Compile Include="Algorithms\Sequencing\LongestConsecutiveAscendingSubsequenceFinder.cs" />
+    <Compile Include="Algorithms\Sequencing\MissingElementFinder.cs" />
+    <Compile Include="Algorithms\Sequencing\Sorting\Common.cs" />
+    <Compile Include="Algorithms\Sequencing\Sorting\InPlaceCocktailBubbleSorter.cs" />
+    <Compile Include="Algorithms\Sequencing\Sorting\InPlaceQuickSorter.cs" />
+    <Compile Include="Algorithms\Sequencing\SubsetProblem\ExponentialTime.cs" />
+    <Compile Include="Algorithms\Sequencing\SubsetProblem\OutsideSolution_Complete.cs" />
+    <Compile Include="Algorithms\Sequencing\TicTacToe.cs" />
+    <Compile Include="Algorithms\Sequencing\TicTacToe2.cs" />
+    <Compile Include="Algorithms\Sequencing\TicTacToeBoard.cs" />
+    <Compile Include="Algorithms\Sequencing\TicTacToePlayers.cs" />
+    <Compile Include="DataStructures\Trees\TrinaryTree.cs" />
+    <Compile Include="Misc\Conversions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Algorithms\GraphTheory\" />
+    <Folder Include="Algorithms\Mathematics\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
