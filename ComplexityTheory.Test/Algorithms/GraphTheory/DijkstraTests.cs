@@ -60,6 +60,82 @@
         }
 
         [Fact]
+        public void GivenMultipleEqualDistancePaths_ExpectOutput3()
+        {
+            // A -> B -> C
+            // A -> D -> C
+
+            // C -> E
+
+            var vertexA = new GraphVertex("A");
+            var vertexB = new GraphVertex("B");
+            var vertexC = new GraphVertex("C");
+            var vertexD = new GraphVertex("D");
+            var vertexE = new GraphVertex("E");
+
+            vertexA.AddConnectionToVertex(vertexB);
+            vertexB.AddConnectionToVertex(vertexC);
+
+            vertexA.AddConnectionToVertex(vertexD);
+            vertexD.AddConnectionToVertex(vertexC);
+
+            vertexD.AddConnectionToVertex(vertexC);
+
+            vertexC.AddConnectionToVertex(vertexE);
+
+            var solution = Dijkstra.Solve(vertexA, vertexE);
+
+            solution.Should().Be(3);
+        }
+
+        [Fact]
+        public void GivenEndlessLoop_ExpectReturnNegativeOne()
+        {
+            var vertexA = new GraphVertex("A");
+            var vertexB = new GraphVertex("B");
+            var vertexC = new GraphVertex("C");
+            var vertexD = new GraphVertex("D");
+
+            vertexA.AddConnectionToVertex(vertexB);
+            vertexB.AddConnectionToVertex(vertexC);
+            vertexC.AddConnectionToVertex(vertexA);
+
+            var solution = Dijkstra.Solve(vertexA, vertexD);
+
+            solution.Should().Be(-1);
+        }
+
+        [Fact]
+        public void GivenTwoWayGraph_ExpectNoBackTracking()
+        {
+            // A <-> B
+            // ^
+            // |
+            // v
+            // C <-> D <-> E
+            var vertexA = new GraphVertex("A");
+            var vertexB = new GraphVertex("B");
+            var vertexC = new GraphVertex("C");
+            var vertexD = new GraphVertex("D");
+            var vertexE = new GraphVertex("E");
+
+            vertexA.AddConnectionToVertex(vertexB);
+            vertexB.AddConnectionToVertex(vertexA);
+
+            vertexA.AddConnectionToVertex(vertexC);
+            vertexC.AddConnectionToVertex(vertexA);
+
+            vertexC.AddConnectionToVertex(vertexD);
+
+            vertexD.AddConnectionToVertex(vertexE);
+            vertexE.AddConnectionToVertex(vertexD);
+
+            var solution = Dijkstra.Solve(vertexA, vertexE);
+
+            solution.Should().Be(3);
+        }
+
+        [Fact]
         public void GivenDestinationNotConnectedToStartPoint_ExpectNegativeOneResult()
         {
             var vertexA = new GraphVertex("A");

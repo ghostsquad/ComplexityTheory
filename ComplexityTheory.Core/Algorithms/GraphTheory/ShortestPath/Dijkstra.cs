@@ -61,6 +61,8 @@
                 }
 
                 visitedVertexes.Add(currentVertex);
+                // TODO I think this is a bug, but I need to figure out a test to confirm it.
+                //unvisitedVertexes.Remove(currentVertex);
 
                 // if this is a dead-end
                 if (currentShortestPathDistance == -1)
