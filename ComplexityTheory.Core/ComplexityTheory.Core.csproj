@@ -49,6 +49,12 @@
     <Compile Include="Algorithms\Combinatorics\KnapsackProblem\KnapsackSolver.cs" />
     <Compile Include="Algorithms\Combinatorics\KnapsackProblem\SubSetSumComplete.cs" />
     <Compile Include="Algorithms\Combinatorics\KnapsackProblem\Supply.cs" />
+    <Compile Include="Algorithms\GraphTheory\ShortestPath\BetterQueue.cs" />
+    <Compile Include="Algorithms\GraphTheory\ShortestPath\Dijkstra.cs" />
+    <Compile Include="Algorithms\GraphTheory\ShortestPath\GraphEdge.cs" />
+    <Compile Include="Algorithms\GraphTheory\ShortestPath\GraphVertex.cs" />
+    <Compile Include="Algorithms\GraphTheory\ShortestPath\WeightedGraphVertex.cs" />
+    <Compile Include="Algorithms\GraphTheory\ShortestPath\WeightedGraphEdge.cs" />
     <Compile Include="Algorithms\Sequencing\ISequenceFinder.cs" />
     <Compile Include="Algorithms\Sequencing\ITicTacToe.cs" />
     <Compile Include="Algorithms\Sequencing\ITicTacToeBoard.cs" />
@@ -68,7 +74,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Algorithms\GraphTheory\" />
     <Folder Include="Algorithms\Mathematics\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

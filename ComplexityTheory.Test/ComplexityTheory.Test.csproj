@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Algorithms\Combinatorics\KnapsackProblem\GreedyApproximationTests.cs" />
+    <Compile Include="Algorithms\GraphTheory\DijkstraTests.cs" />
     <Compile Include="Algorithms\Sequencing\LongestConsecutiveAscendingSubsequenceFinderTests.cs" />
     <Compile Include="Algorithms\Sequencing\MissingElementFinderTests.cs" />
     <Compile Include="Algorithms\Sequencing\Sorting\Common.cs" />
@@ -82,7 +83,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Algorithms\Combinatorics\KnapsackProblem\Algorithms\" />
-    <Folder Include="Algorithms\GraphTheory\" />
     <Folder Include="Algorithms\Mathematics\" />
     <Folder Include="DataStructures\Graphs\" />
   </ItemGroup>
