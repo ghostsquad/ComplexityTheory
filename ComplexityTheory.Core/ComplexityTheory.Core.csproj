@@ -70,7 +70,13 @@
     <Compile Include="Algorithms\Sequencing\TicTacToeBoard.cs" />
     <Compile Include="Algorithms\Sequencing\TicTacToePlayers.cs" />
     <Compile Include="DataStructures\Trees\TrinaryTree.cs" />
+    <Compile Include="DictionaryExtensions.cs" />
     <Compile Include="Misc\Conversions.cs" />
+    <Compile Include="Patterns\ExceptionalRetryService.cs" />
+    <Compile Include="Patterns\IRetryable.cs" />
+    <Compile Include="Patterns\RetryPolicyBase.cs" />
+    <Compile Include="Patterns\IRetryScenario.cs" />
+    <Compile Include="Patterns\RetryServiceBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
