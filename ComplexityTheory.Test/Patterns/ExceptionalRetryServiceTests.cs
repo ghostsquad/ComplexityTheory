@@ -32,7 +32,6 @@
             this.retryableMock = new Mock<IRetryable>();
 
             var retryScenarioDictionary = new Dictionary<IRetryScenario, int>();
-            this.retryableMock.SetupGet(x => x.TriesUsing).Returns(retryScenarioDictionary);
         }
 
         [Fact]
@@ -42,7 +41,7 @@
             this.testable.ClassUnderTest.Execute(this.retryableMock.Object);
 
             this.retryableMock.Verify(x => x.ExecuteWithContext(It.IsAny<IRetryScenario>()), Times.Once());
-            this.retryableMock.Verify(x => x.ExecuteWithContext(null), Times.Once());
+            this.retryableMock.Verify(x => x.ExecuteWithContext(It.Is<IRetryScenario>(scenario => scenario == null)), Times.Once());
         }
 
         [Fact]

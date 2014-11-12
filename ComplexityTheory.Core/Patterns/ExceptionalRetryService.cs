@@ -1,6 +1,5 @@
 ﻿namespace ComplexityTheory.Core.Patterns {
     using System;
-    using System.Collections.Generic;
 
     public class ExceptionalRetryService : RetryServiceBase {
         public ExceptionalRetryService(RetryPolicyBase retryPolicyBase)
@@ -8,37 +7,22 @@
         }
 
         public override void Execute(IRetryable retryable) {
-            retryable.TriesUsing = new Dictionary<IRetryScenario, int>();
-            if (this.RetryPolicyBase != null && this.RetryPolicyBase.Scenarios != null) {
-                foreach (var scenario in this.RetryPolicyBase.Scenarios) {
-                    if (scenario != null) {
-                        retryable.TriesUsing.Add(scenario, 0);
-                    }
-                }
-            }
+            var scenarioRetries = this.GetScenarioRetriesDictionary();
 
             IRetryScenario currentScenario = null;
-            bool doRetry = false;
+            bool doRetry;
 
             do {
                 try {
                     doRetry = false;
                     if (currentScenario != null) {
-                        retryable.TriesUsing.Increment(currentScenario);
+                        scenarioRetries.Increment(currentScenario);
                     }
                     retryable.ExecuteWithContext(currentScenario);
                 }
                 catch (Exception exception) {
-                    retryable.Cleanup(currentScenario);
-                    if (this.RetryPolicyBase != null && this.RetryPolicyBase.Scenarios != null) {
-                        foreach (var scenario in this.RetryPolicyBase.Scenarios) {
-                            if (scenario.IsProcessEligibleForRetry(exception)) {
-                                currentScenario = scenario;
-                                doRetry = true;
-                                break;
-                            }
-                        }
-                    }
+                    retryable.HealWithContext(currentScenario);
+                    doRetry = this.TrySetRetryScenario(exception, ref currentScenario);
 
                     if (!doRetry) {
                         throw;
