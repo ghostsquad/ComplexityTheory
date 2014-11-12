@@ -6,6 +6,8 @@
 
         void ExecuteWithContext(IRetryScenario scenario);
 
+        bool ExecutionSuccessful { get; }
+
         #endregion
     }
 }

@@ -1,4 +1,5 @@
 ﻿namespace ComplexityTheory.Core.Patterns {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
 
@@ -36,6 +37,6 @@
             }
 
             return scenarioRetries;
-        } 
+        }
     }
 }
