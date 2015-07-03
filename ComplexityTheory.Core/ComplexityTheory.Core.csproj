@@ -63,6 +63,7 @@
     <Compile Include="Algorithms\Sequencing\Sorting\Common.cs" />
     <Compile Include="Algorithms\Sequencing\Sorting\InPlaceCocktailBubbleSorter.cs" />
     <Compile Include="Algorithms\Sequencing\Sorting\InPlaceQuickSorter.cs" />
+    <Compile Include="Algorithms\Sequencing\Sorting\MultiServerSorter.cs" />
     <Compile Include="Algorithms\Sequencing\SubsetProblem\ExponentialTime.cs" />
     <Compile Include="Algorithms\Sequencing\SubsetProblem\OutsideSolution_Complete.cs" />
     <Compile Include="Algorithms\Sequencing\TicTacToe.cs" />
